@@ -1,0 +1,10 @@
+*8 Basic JS concept*
+
+*function implementation*
+=>Search
+=>Sort
+=>Create
+=>Edit
+=>Delete
+
+*API Integration*

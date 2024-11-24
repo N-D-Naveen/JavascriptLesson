@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Access and Properties Demo</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            color: #1abc9c;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        p,
+        ul {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .fruitBasket {
+            border: 1px solid #34495e;
+            background-color: #34495e;
+            padding: 10px;
+            margin: 20px 0;
+            list-style: none;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #f1c40f;
+        }
+
+        .basket-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .example {
+            background-color: #2e4053;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        pre {
+            background-color: #34495e;
+            padding: 10px;
+            color: #ecf0f1;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Access and Properties Demo</h1>
+
+    <!-- Apple Basket -->
+    <div class="basket-label">Apple Basket</div>
+    <ul id="appleBasket" class="fruitBasket">
+        <li>Apple 1</li>
+        <li>Apple 2</li>
+    </ul>
+
+    <!-- Banana Basket -->
+    <div class="basket-label">Banana Basket</div>
+    <ul class="fruitBasket" id="bananaBasket">
+        <li>Banana 1</li>
+        <li>Banana 2</li>
+    </ul>
+
+    <!-- Input Box -->
+    <div>
+        <label for="fruitInput">Add to Banana Basket:</label>
+        <input type="text" id="fruitInput" placeholder="Enter fruit name">
+        <button id="addFruit">Add Fruit</button>
+    </div>
+
+    <!-- Buttons for Demo -->
+    <button id="highlightAppleBasket">Highlight Apple Basket</button>
+    <button id="changeBananaText">Change Banana Basket Text</button>
+
+    <!-- Examples Section -->
+    <h2>Examples</h2>
+    <div class="example">
+        <h3>Access Elements by ID</h3>
+        <pre>
+const appleBasket = document.getElementById("appleBasket");
+console.log(appleBasket.innerHTML);
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Access Elements by Class Name</h3>
+        <pre>
+const fruitBaskets = document.getElementsByClassName("fruitBasket");
+console.log(fruitBaskets.length);
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Change Text Content</h3>
+        <pre>
+const firstItem = document.querySelector("#bananaBasket li");
+firstItem.textContent = "Updated Banana";
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Add Class to Element</h3>
+        <pre>
+const appleBasket = document.getElementById("appleBasket");
+appleBasket.classList.add("highlight");
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Remove Class from Element</h3>
+        <pre>
+const appleBasket = document.getElementById("appleBasket");
+appleBasket.classList.remove("highlight");
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Update InnerHTML</h3>
+        <pre>
+const bananaBasket = document.querySelector("#bananaBasket");
+bananaBasket.innerHTML += "<li>New Banana</li>";
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Update Input Value</h3>
+        <pre>
+const inputBox = document.getElementById("fruitInput");
+inputBox.value = "Apple";
+        </pre>
+    </div>
+    <div class="example">
+        <h3>Access All Li Elements in Banana Basket</h3>
+        <pre>
+const bananaItems = document.querySelectorAll("#bananaBasket li");
+bananaItems.forEach(item => console.log(item.textContent));
+        </pre>
+    </div>
+
+    <!-- Documentation Section -->
+    <h2>Documentation</h2>
+    <ul>
+        <li><strong>Accessing Elements:</strong></li>
+        <ul>
+            <li><strong>By ID:</strong> <code>document.getElementById()</code></li>
+            <li><strong>By Class:</strong> <code>document.getElementsByClassName()</code></li>
+            <li><strong>By Tag:</strong> <code>document.getElementsByTagName()</code></li>
+            <li><strong>By Selector:</strong> <code>document.querySelector()</code></li>
+        </ul>
+        <li><strong>Properties:</strong></li>
+        <ul>
+            <li><code>innerHTML</code>: Get or set HTML content.</li>
+            <li><code>textContent</code>: Get or set plain text.</li>
+            <li><code>classList</code>: Add, remove, or toggle classes.</li>
+            <li><code>style</code>: Modify inline styles.</li>
+            <li><code>value</code>: Get or set input values.</li>
+        </ul>
+    </ul>
+
+    <h2>Homework</h2>
+    <p>Create reusable functions for the following tasks:</p>
+    <ul>
+        <li>Write a function that changes the text content of the first item in the Apple Basket to "Updated Apple".
+        </li>
+    </ul>
+    <p>Make sure to call these functions using event listeners on buttons. The goal is to manipulate the DOM dynamically
+        by interacting with the HTML elements using JavaScript.</p>
+
+
+    <script>
+        // Add Fruit to Banana Basket
+        document.getElementById("addFruit").addEventListener("click", () => {
+            const input = document.getElementById("fruitInput");
+            const bananaBasket = document.getElementById("bananaBasket");
+            if (input.value) {
+                bananaBasket.innerHTML += `<li>${input.value}</li>`;
+                input.value = "";
+            }
+        });
+
+        // Highlight Apple Basket
+        document.getElementById("highlightAppleBasket").addEventListener("click", () => {
+            const appleBasket = document.getElementById("appleBasket");
+            appleBasket.classList.add("highlight");
+        });
+
+        // Change Banana Basket Text
+        document.getElementById("changeBananaText").addEventListener("click", () => {
+            const firstItem = document.querySelector("#bananaBasket li");
+            if (firstItem) firstItem.textContent = "Updated Banana";
+        });
+    </script>
+</body>
+
+</html>

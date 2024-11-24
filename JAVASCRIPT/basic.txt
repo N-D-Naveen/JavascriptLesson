@@ -1,0 +1,10 @@
+----File Name Standard----
+
+Use lowercase letters:
+File systems can be case-sensitive, so using lowercase avoids confusion.
+Example: main.js, app.js.
+Use hyphens for separation:
+
+Hyphens (-) are preferred for separating words in file names.
+Avoid underscores (_) or camelCase as hyphens are more SEO-friendly and easier to read.
+Example: user-profile.js, data-loader.js.

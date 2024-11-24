@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops and Array Methods</title>
+    <style>
+        body {
+            background-color: #34495e;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #1abc9c;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        p, ul {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #2c3e50;
+            padding: 10px;
+            color: #ecf0f1;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Loops and Array Methods</h1>
+
+    <h2>1. For Loop</h2>
+    <p>A <strong>for loop</strong> is used when you know how many times you want to run a block of code.</p>
+    <pre>
+    // Example of a for loop
+    let numbers = [1, 2, 3, 4, 5];
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+    }
+    </pre>
+    <p>Output: The loop will log each number in the array.</p>
+
+    <h2>2. For...In Loop</h2>
+    <p>The <strong>for...in</strong> loop is used to iterate over the properties of an object.</p>
+    <pre>
+    // Example of a for...in loop
+    let person = { name: "John", age: 30, city: "New York" };
+    for (let key in person) {
+        console.log(key + ": " + person[key]);
+    }
+    </pre>
+    <p>Output: The loop will log each property and its value.</p>
+
+    <h2>3. Array Methods: Map, Filter, and Reduce</h2>
+
+    <h3>3.1. Map</h3>
+    <p>The <strong>map()</strong> method creates a new array populated with the results of calling a provided function on every element in the array.</p>
+    <pre>
+    // Example of map
+    let numbers = [1, 2, 3, 4];
+    let squaredNumbers = numbers.map(num => num * num);
+    console.log(squaredNumbers); // Output: [1, 4, 9, 16]
+    </pre>
+
+    <h3>3.2. Filter</h3>
+    <p>The <strong>filter()</strong> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+    <pre>
+    // Example of filter
+    let numbers = [1, 2, 3, 4, 5];
+    let evenNumbers = numbers.filter(num => num % 2 === 0);
+    console.log(evenNumbers); // Output: [2, 4]
+    </pre>
+
+    <h3>3.3. Reduce</h3>
+    <p>The <strong>reduce()</strong> method executes a reducer function (that you provide) on each element of the array (from left to right) to reduce it to a single value.</p>
+    <pre>
+    // Example of reduce
+    let numbers = [1, 2, 3, 4];
+    let sum = numbers.reduce((total, num) => total + num, 0);
+    console.log(sum); // Output: 10
+    </pre>
+
+    <h2>Homework</h2>
+    <p>Create reusable functions for the following tasks:</p>
+    <ul>
+        <li>Write a function that uses a <strong>for loop</strong> to find and log all the even numbers in an array.</li>
+        <li>Write a function that uses a <strong>for...in loop</strong> to print the properties and values of an object representing a book (e.g., title, author, year published, etc.).</li>
+        <li>Write a function that uses the <strong>map()</strong> method to multiply each number in an array by 10.</li>
+        <li>Write a function that uses the <strong>filter()</strong> method to return all the odd numbers from an array.</li>
+        <li>Write a function that uses the <strong>reduce()</strong> method to find the product of all the numbers in an array.</li>
+    </ul>
+    <p>Test your functions with different values and log the results to the console.</p>
+
+    <script>
+        // For Loop Example
+        let numbers = [1, 2, 3, 4, 5];
+        for (let i = 0; i < numbers.length; i++) {
+            console.log(numbers[i]);
+        }
+
+        // For...In Loop Example
+        let person = { name: "John", age: 30, city: "New York" };
+        for (let key in person) {
+            console.log(key + ": " + person[key]);
+        }
+
+        // Map Example
+        let numbersArray = [1, 2, 3, 4];
+        let squaredNumbers = numbersArray.map(num => num * num);
+        console.log("Squared Numbers:", squaredNumbers);  // Output: [1, 4, 9, 16]
+
+        // Filter Example
+        let numbersArray2 = [1, 2, 3, 4, 5];
+        let evenNumbers = numbersArray2.filter(num => num % 2 === 0);
+        console.log("Even Numbers:", evenNumbers);  // Output: [2, 4]
+
+        // Reduce Example
+        let numbersArray3 = [1, 2, 3, 4];
+        let sum = numbersArray3.reduce((total, num) => total + num, 0);
+        console.log("Sum:", sum);  // Output: 10
+    </script>
+</body>
+
+</html>

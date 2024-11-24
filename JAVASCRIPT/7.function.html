@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions and Reusability</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1abc9c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .example {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        pre {
+            background-color: #2e4053;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        li {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '✓';
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Functions and Reusability</h1>
+        <p>
+            Functions are powerful tools in programming. They let you define a single set of instructions that can work with different inputs and produce different results. Think of a function as a *mixer* that takes ingredients (inputs) and creates a unique blend (output) based on what you provide. For example, you can use the same mixer to make different fruit juices by providing different fruits.
+        </p>
+
+        <h2>Function Definition</h2>
+        <p>
+            Here's how you can define a function that "mixes" fruits into a juice:
+        </p>
+        <div class="example">
+            <pre>
+// Define a function to mix fruits
+function makeJuice(fruit1, fruit2) {
+    return `Here is your juice made of ${fruit1} and ${fruit2}!`;
+}
+            </pre>
+        </div>
+        <p>In this case:</p>
+        <ul>
+            <li>The function is <code>makeJuice</code>.</li>
+            <li>The inputs (parameters) are <code>fruit1</code> and <code>fruit2</code>.</li>
+            <li>The output is a message describing the juice made from the provided fruits.</li>
+        </ul>
+
+        <h2>Function Call</h2>
+        <p>
+            To use the function, you call it with specific fruits as arguments. Here's how you can create different juices:
+        </p>
+        <div class="example">
+            <pre>
+// Call the function with different fruits
+let juice1 = makeJuice("Apple", "Orange");
+let juice2 = makeJuice("Banana", "Strawberry");
+
+console.log(juice1); // Output: Here is your juice made of Apple and Orange!
+console.log(juice2); // Output: Here is your juice made of Banana and Strawberry!
+            </pre>
+        </div>
+        <p>By changing the input fruits, the same function produces different results.</p>
+
+        <h2>Why Use Functions?</h2>
+        <p>
+            Functions save time and effort by allowing you to reuse the same logic for different scenarios. Instead of writing the mixing process repeatedly, you define it once and use it with any combination of fruits:
+        </p>
+        <div class="example">
+            <pre>
+// Reuse the same function for various combinations
+let tropicalJuice = makeJuice("Pineapple", "Coconut");
+let citrusJuice = makeJuice("Lemon", "Lime");
+
+console.log(tropicalJuice); // Output: Here is your juice made of Pineapple and Coconut!
+console.log(citrusJuice);   // Output: Here is your juice made of Lemon and Lime!
+            </pre>
+        </div>
+
+        <h2>Naming Conventions</h2>
+        <p>
+            Follow these best practices for naming functions to make your code clear and maintainable:
+        </p>
+        <ul>
+            <li><strong>Use Verb Phrases:</strong> Start function names with an action word that explains what the function does, such as <code>makeJuice</code>, <code>calculateTotal</code>, or <code>fetchData</code>.</li>
+            <li><strong>Use Camel Case:</strong> Start with a lowercase letter, and capitalize the first letter of subsequent words. For example: <code>getUserDetails</code>.</li>
+            <li><strong>Be Descriptive:</strong> Avoid vague names like <code>doStuff</code>. Clearly state the function’s purpose.</li>
+            <li><strong>Prefix Common Actions:</strong> Use prefixes like <code>get</code> (retrieve data), <code>set</code> (update a value), or <code>is</code>/<code>has</code> (return a boolean).</li>
+            <li><strong>Avoid Abbreviations:</strong> Write full words for clarity. For instance, use <code>calculateTax</code> instead of <code>calcTax</code>.</li>
+        </ul>
+        <div class="example">
+            <pre>
+// Good Naming Examples
+function calculateArea(length, width) {
+    return length * width;
+}
+
+function isUserLoggedIn(user) {
+    return user.isLoggedIn;
+}
+
+function fetchProductDetails(productId) {
+    return database.getProduct(productId);
+}
+
+// Bad Naming Examples
+function doStuff() {
+    // unclear what this does
+}
+
+function calc() {
+    // too vague
+}
+            </pre>
+        </div>
+
+        <h2>Homework</h2>
+        <p>Create reusable functions for the following tasks:</p>
+        <ul>
+            <li>Write a function that takes two numbers and returns their average.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

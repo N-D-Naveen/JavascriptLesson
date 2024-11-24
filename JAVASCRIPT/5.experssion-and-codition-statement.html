@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions and Conditions</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1abc9c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .example {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        pre {
+            background-color: #2e4053;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        .container {
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        li {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '✓';
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+
+        .homework ul {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .homework li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Expressions and Conditions</h1>
+        <p>In programming, we use <strong>expressions</strong> to calculate values and <strong>conditions</strong> to make decisions. We’ll focus on the following comparison operators: <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>==</code>, and <code>===</code>.</p>
+
+        <h2>Examples of Expressions</h2>
+        <p>Expressions involve comparing or calculating values. Some common examples include:</p>
+        <div class="example">
+            <pre>
+// Using comparison operators:
+let age = 20;
+let isAdult = age > 18; // true: age is greater than 18
+
+let temperature = 25;
+let isHot = temperature >= 30; // false: temperature is less than 30
+
+let isSame = 5 == '5'; // true: values are equal (loose comparison)
+let isStrictSame = 5 === '5'; // false: values and types must match (strict comparison)
+            </pre>
+        </div>
+
+        <h2>Examples of Conditions</h2>
+        <p>Conditions, like <code>if</code> and <code>else</code>, allow programs to make decisions based on expressions. Here’s an example:</p>
+        <div class="example">
+            <pre>
+// Deciding what to wear based on temperature
+let temperature = 22;
+if (temperature > 25) {
+    console.log("Wear light clothes");
+} else {
+    console.log("Wear a jacket");
+}
+
+// Checking if a number is even or odd
+let number = 7;
+if (number % 2 === 0) {
+    console.log("The number is even");
+} else {
+    console.log("The number is odd");
+}
+            </pre>
+        </div>
+
+        <h2>Homework</h2>
+        <p>Practice writing expressions and conditions for the following scenarios:</p>
+        <ul>
+            <li>Check if a person is eligible to vote (age ≥ 18).</li>
+            <li>Compare two numbers and print the larger one. If they are equal, print "Both are equal".</li>
+        </ul>
+    </div>
+</body>
+
+</html>

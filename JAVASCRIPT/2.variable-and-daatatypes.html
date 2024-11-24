@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Data Types</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1abc9c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .example {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        pre {
+            background-color: #2e4053;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        .container {
+            margin: 20px 0;
+        }
+
+        .important {
+            color: #BF5E93;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        li {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '✓';
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+
+        li.error::before {
+            content: '✖';
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+
+        .example ul {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .example li {
+            margin-bottom: 10px;
+        }
+
+        .homework ul {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .homework li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Variables, Data Types, and Naming Standards</h1>
+        <p>In JavaScript, we use variables to store values. Think of variables as containers that hold data.</p>
+
+        <h2>Cup/Bottle/Jar Analogy for Variables</h2>
+        <p>Variables are like containers that hold liquids. These containers can be:</p>
+        <ul>
+            <li><strong>var</strong>: An older container that can spill.</li>
+            <li><strong>let</strong>: A newer, safer container with a lid.</li>
+            <li><strong>const</strong>: A sealed container that cannot be changed.</li>
+        </ul>
+
+        <!-- Data Types Analogy -->
+        <h2>Data Types Analogy</h2>
+        <p>Just as we use specific containers in our kitchen to store certain items, JavaScript has standards for which data type should store which kind of data:</p>
+        <ul>
+            <li><strong>Number</strong>: a number holds a numeric value (e.g., 5, 3.14).</li>
+            <li><strong>String</strong>: a string holds text (e.g., "Hello, world!").</li>
+            <li><strong>Boolean</strong>: a boolean holds only two possible values: true or false.</li>
+            <li><strong>Object</strong>: Like a bottle filled with cashews, badams, and pistas, an object holds multiple items under one name, with each item having its count (e.g., { cashews: 10, badams: 15, pistas: 20 }).</li>
+            <li><strong>Array</strong>: Like an egg tray where each row holds a certain number of eggs, an array holds multiple values in a specific order (e.g., [6, 8, 10] where each number represents the number of eggs in a row).</li>
+        </ul>
+
+        <p>In the kitchen, we use plastic covers to store only solid items, because liquids can spill. Similarly, JavaScript has standards that certain types of data should be stored in specific data types. For instance, numbers (liquid) go into bottles, while objects and arrays (solids) go into boxes and trays to keep them organized and prevent them from spilling.</p>
+
+        <h2>Camel Case: A Naming Standard</h2>
+        <p>In JavaScript, variables and functions follow the <strong>Camel Case</strong> naming convention:</p>
+        <ul>
+            <li>Start with a <strong>lowercase</strong> letter.</li>
+            <li>Capitalize the first letter of each subsequent word.</li>
+            <li><span class="important">Good variable names:</span> <strong>userAge</strong>, <strong>totalPrice</strong></li>
+            <li><span class="error">Bad variable names:</span> <strong>totalprice</strong> (hard to read), <strong>1userName</strong> (can’t start with a number), <strong>let</strong> (reserved keyword).</li>
+        </ul>
+
+        <h2>Code Examples</h2>
+        <div class="example">
+            <pre>
+// Using var (Old Style):
+var userAge = 25; // Can be changed, but may cause unpredictable behavior
+
+// Using let (Modern & Safe):
+let temperature = 72; // Can be updated later, but only in the same block of code
+
+// Using const (Sealed):
+const birthYear = 1995; // Cannot be changed once set
+
+// Camel Case Examples:
+let myFavoriteDrink = 'Coffee'; // Camel case variable name
+const userAge = 30; // Good variable name
+            </pre>
+        </div>
+
+        <h2>Homework</h2>
+        <p>Try the following:</p>
+        <ul>
+            <li>Write a variable using <strong>Camel Case</strong> for your favorite food.</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

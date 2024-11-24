@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Operators in JavaScript</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #1abc9c;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        p, ul {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #34495e;
+            padding: 10px;
+            color: #ecf0f1;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Basic Operators in JavaScript</h1>
+
+    <h2>Examples of Basic Operators</h2>
+    <p>In JavaScript, there are several basic operators that are commonly used:</p>
+
+    <h3>1. Arithmetic Operators</h3>
+    <p>These operators perform mathematical operations on numbers:</p>
+    <pre>
+    // Addition
+    let sum = 5 + 3;
+    console.log(sum);  // Output: 8
+
+    // Subtraction
+    let difference = 5 - 3;
+    console.log(difference);  // Output: 2
+
+    // Multiplication
+    let product = 5 * 3;
+    console.log(product);  // Output: 15
+
+    // Division
+    let quotient = 6 / 3;
+    console.log(quotient);  // Output: 2
+    </pre>
+
+    <h3>2. Comparison Operators</h3>
+    <p>These operators compare values and return a boolean result (true or false):</p>
+    <pre>
+    // Equal to
+    let isEqual = 5 == 3;
+    console.log(isEqual);  // Output: false
+
+    // Greater than
+    let isGreaterThan = 5 > 3;
+    console.log(isGreaterThan);  // Output: true
+
+    // Less than
+    let isLessThan = 5 < 3;
+    console.log(isLessThan);  // Output: false
+    </pre>
+
+    <h3>3. Logical Operators</h3>
+    <p>These operators combine multiple conditions:</p>
+    <pre>
+    // AND operator (both conditions must be true)
+    let isAdult = true;
+    let hasID = true;
+    let canBuyAlcohol = isAdult && hasID;
+    console.log(canBuyAlcohol);  // Output: true
+
+    // OR operator (either condition can be true)
+    let hasTicket = false;
+    let isVIP = true;
+    let canEnter = hasTicket || isVIP;
+    console.log(canEnter);  // Output: true
+    </pre>
+
+    <h2>Homework</h2>
+    <p>Create reusable functions for the following tasks:</p>
+    <ul>
+        <li>Write a function that adds two numbers and returns the result.</li>
+        <li>Write a function that compares two numbers and returns true if the first is greater than the second.</li>
+    </ul>
+    <p>Test your functions with different values and log the results to the console.</p>
+
+    <script>
+        // Example of Arithmetic Operators
+        let sum = 5 + 3;
+        console.log("Sum:", sum);  // Output: 8
+
+        let difference = 5 - 3;
+        console.log("Difference:", difference);  // Output: 2
+
+        let product = 5 * 3;
+        console.log("Product:", product);  // Output: 15
+
+        let quotient = 6 / 3;
+        console.log("Quotient:", quotient);  // Output: 2
+
+        // Example of Comparison Operators
+        let isEqual = 5 == 3;
+        console.log("Is Equal:", isEqual);  // Output: false
+
+        let isGreaterThan = 5 > 3;
+        console.log("Is Greater Than:", isGreaterThan);  // Output: true
+
+        let isLessThan = 5 < 3;
+        console.log("Is Less Than:", isLessThan);  // Output: false
+
+        // Example of Logical Operators
+        let isAdult = true;
+        let hasID = true;
+        let canBuyAlcohol = isAdult && hasID;
+        console.log("Can Buy Alcohol:", canBuyAlcohol);  // Output: true
+
+        let hasTicket = false;
+        let isVIP = true;
+        let canEnter = hasTicket || isVIP;
+        console.log("Can Enter:", canEnter);  // Output: true
+    </script>
+</body>
+
+</html>

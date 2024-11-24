@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript: Interactive Examples</title>
+  <style>
+    :root {
+      --primary-color: #1abc9c;
+      --secondary-color: #34495e;
+      --background-color: #2c3e50;
+      --form-bg-color: #34495e;
+      --table-bg-color: #2e4053;
+      --font-color: #ecf0f1;
+      --hover-color: #16a085;
+      --delete-color: #e74c3c;
+      --row-hover-color: #3c5568;
+      --font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--font-color);
+      font-family: var(--font-family);
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    h1, h2 {
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    .card {
+      background-color: var(--form-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: var(--table-bg-color);
+      color: var(--font-color);
+      margin: 5px;
+      width: calc(50% - 12px);
+    }
+
+    #remoteOutput, #calculatorOutput {
+      margin-top: 15px;
+      padding: 15px;
+      background: var(--table-bg-color);
+      border: 1px solid var(--hover-color);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript: Making Websites Interactive</h1>
+
+    <div class="card">
+      <p>
+        <strong>"Think of JavaScript as the remote control for your webpage. Without it, the TV (your webpage) just sits there. With it, you can change channels, adjust volume, and more!"</strong>
+      </p>
+    </div>
+
+    <h2>Static vs Dynamic Website Comparison</h2>
+
+    <div class="card">
+      <h3>Static Website (No JavaScript)</h3>
+      <p>The TV is stuck on one channel, and you can't interact with it.</p>
+      <button disabled>Click Me (Nothing Happens)</button>
+    </div>
+
+    <div class="card">
+      <h3>Dynamic Website Example 1 (TV Remote)</h3>
+      <p>The TV now has a remote! Click the buttons to interact:</p>
+      <button id="volumeUp">Increase Volume</button>
+      <button id="changeChannel">Change Channel</button>
+      <button id="power">Turn Off TV</button>
+      <div id="remoteOutput">TV is On, Volume: 10, Channel: 1</div>
+    </div>
+
+    <div class="card">
+      <h3>Dynamic Website Example 2 (Simple Calculator)</h3>
+      <p>Enter two numbers and click a button to calculate:</p>
+      <input type="number" id="num1" placeholder="Enter first number">
+      <input type="number" id="num2" placeholder="Enter second number">
+      <div>
+        <button id="add">Add</button>
+        <button id="subtract">Subtract</button>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+      </div>
+      <div id="calculatorOutput">Result will be displayed here</div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for TV Remote Example
+    let volume = 10;
+    let channel = 1;
+    const remoteOutput = document.getElementById("remoteOutput");
+
+    document.getElementById("volumeUp").addEventListener("click", () => {
+      volume++;
+      remoteOutput.textContent = `TV is On, Volume: ${volume}, Channel: ${channel}`;
+    });
+
+    document.getElementById("changeChannel").addEventListener("click", () => {
+      channel++;
+      if (channel > 5) channel = 1; // Reset to channel 1 after 5
+      remoteOutput.textContent = `TV is On, Volume: ${volume}, Channel: ${channel}`;
+    });
+
+    document.getElementById("power").addEventListener("click", () => {
+      remoteOutput.textContent = "TV is Off. Please turn it on.";
+    });
+
+    // JavaScript for Calculator Example
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const calculatorOutput = document.getElementById("calculatorOutput");
+
+    const calculate = (operation) => {
+      const n1 = parseFloat(num1.value);
+      const n2 = parseFloat(num2.value);
+      if (isNaN(n1) || isNaN(n2)) {
+        calculatorOutput.textContent = "Please enter valid numbers!";
+        return;
+      }
+      let result;
+      switch (operation) {
+        case "add":
+          result = n1 + n2;
+          break;
+        case "subtract":
+          result = n1 - n2;
+          break;
+        case "multiply":
+          result = n1 * n2;
+          break;
+        case "divide":
+          result = n2 !== 0 ? n1 / n2 : "Cannot divide by zero!";
+          break;
+      }
+      calculatorOutput.textContent = `Result: ${result}`;
+    };
+
+    document.getElementById("add").addEventListener("click", () => calculate("add"));
+    document.getElementById("subtract").addEventListener("click", () => calculate("subtract"));
+    document.getElementById("multiply").addEventListener("click", () => calculate("multiply"));
+    document.getElementById("divide").addEventListener("click", () => calculate("divide"));
+  </script>
+</body>
+</html>
