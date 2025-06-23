@@ -3,6 +3,12 @@
 
 <head>
     <title>DOM Manipulation Demo</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,12 +41,13 @@
         const firstPost = document.querySelector(".post");
         firstPost.style.border = "2px solid blue";
         firstPost.style.padding = "10px";
+        firstPost.style.display = "none";
 
         // 4. Add/remove classes
         const secondTitle = document.querySelectorAll(".post-title")[1];
         secondTitle.classList.add("highlight");
-        // Remove it after 2 seconds
-        setTimeout(() => secondTitle.classList.remove("highlight"), 2000);
+        // Remove classes
+        //secondTitle.classList.remove("highlight")
 
         // 5. Set/get attribute
         const input = document.getElementById("nameInput");
