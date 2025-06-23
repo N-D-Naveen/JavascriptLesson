@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Manipulation Demo</title>
+</head>
+
+<body>
+
+    <h1 id="page-title">My Blog</h1>
+
+    <div class="post">
+        <h2 class="post-title">Post 1 Title</h2>
+        <p class="description">Post 1 Description</p>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Post 2 Title</h2>
+        <p class="description">Post 2 Description</p>
+    </div>
+
+    <input id="nameInput" type="text" value="John Doe" />
+    <button id="actionBtn">Click Me</button>
+
+    <script>
+        // 1. Change text (innerText, textContent)
+        const pageTitle = document.getElementById("page-title");
+        pageTitle.innerText = "Updated Blog Title";
+
+        // 2. Change HTML (innerHTML)
+        const firstDesc = document.querySelector(".description");
+        firstDesc.innerHTML = "<strong>Updated:</strong> Post 1 Description";
+
+        // 3. Change style
+        const firstPost = document.querySelector(".post");
+        firstPost.style.border = "2px solid blue";
+        firstPost.style.padding = "10px";
+
+        // 4. Add/remove classes
+        const secondTitle = document.querySelectorAll(".post-title")[1];
+        secondTitle.classList.add("highlight");
+        // Remove it after 2 seconds
+        setTimeout(() => secondTitle.classList.remove("highlight"), 2000);
+
+        // 5. Set/get attribute
+        const input = document.getElementById("nameInput");
+        input.setAttribute("placeholder", "Enter your name");
+        console.log("Input type:", input.getAttribute("type"));
+
+        // 6. Handle events (click event)
+        const btn = document.getElementById("actionBtn");
+        btn.addEventListener("click", () => {
+            alert("Button clicked!");
+        });
+
+        // 7. Navigate DOM
+        const secondPost = document.querySelectorAll(".post")[1];
+        console.log("Parent Element:", secondPost.parentElement);
+        console.log("Children:", secondPost.children);
+
+        // 8. Work with input value
+        console.log("Input value before:", input.value);
+        input.value = "Jane Smith";
+        console.log("Input value after:", input.value);
+
+        // 9. Add/remove elements
+        const newPost = document.createElement("div");
+        newPost.className = "post";
+        newPost.innerHTML = `
+      <h2 class="post-title">Post 3 Title</h2>
+      <p class="description">Post 3 Description</p>
+    `;
+        document.body.appendChild(newPost); // Add to the bottom
+
+        // Remove an element after 4 seconds
+        // newPost.remove();
+        // console.log("Post 3 removed");
+
+    </script>
+
+</body>
+
+</html>
