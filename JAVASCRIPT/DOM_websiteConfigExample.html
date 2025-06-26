@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Website Configurator</title>
+  <style>
+    .post {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="site-title">My Website</h1>
+
+  <div class="post" id="main-post">
+    <h2 class="post-title" id="post-title">Post Title</h2>
+    <p class="description" id="post-desc">This is a sample description.</p>
+  </div>
+
+  <h3>Configure Website</h3>
+  <label>Site Title: <input type="text" id="siteTitleInput" /></label><br><br>
+  <label>Post Title: <input type="text" id="postTitleInput" /></label><br><br>
+  <label>Description: <input type="text" id="descInput" /></label><br><br>
+  <label>Font Family:
+    <select id="fontFamilyInput">
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Georgia">Georgia</option>
+    </select>
+  </label><br><br>
+  <label>Font Size (px): <input type="number" id="fontSizeInput" value="16" /></label><br><br>
+  <label>Text Color: <input type="color" id="textColorInput" value="#000000" /></label><br><br>
+  <label>Background Color: <input type="color" id="bgColorInput" value="#ffffff" /></label><br><br>
+  <label>Border Style:
+    <select id="borderStyleInput">
+      <option value="1px solid #ccc">Thin</option>
+      <option value="2px dashed blue">Dashed Blue</option>
+      <option value="3px solid green">Thick Green</option>
+    </select>
+  </label><br><br>
+
+  <button id="updateBtn">Update Website</button>
+
+  <script>
+    document.getElementById("updateBtn").addEventListener("click", () => {
+      // 1. Change text
+      document.getElementById("site-title").innerText = document.getElementById("siteTitleInput").value;
+      document.getElementById("post-title").innerText = document.getElementById("postTitleInput").value;
+
+      // 2. Change innerHTML (description)
+      const descInput = document.getElementById("descInput").value;
+      document.getElementById("post-desc").innerHTML = `<b>${descInput}</b>`;
+
+      // 3. Change styles
+      const post = document.getElementById("main-post");
+      post.style.fontFamily = document.getElementById("fontFamilyInput").value;
+      post.style.fontSize = document.getElementById("fontSizeInput").value + "px";
+      post.style.color = document.getElementById("textColorInput").value;
+      post.style.backgroundColor = document.getElementById("bgColorInput").value;
+      post.style.border = document.getElementById("borderStyleInput").value;
+
+    });
+  </script>
+
+</body>
+</html>

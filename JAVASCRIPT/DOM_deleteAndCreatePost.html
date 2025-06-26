@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add/Remove Blog Post</title>
+  <style>
+    .post {
+      border: 1px solid #888;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Blog Post Manager</h1>
+  <button id="addPostBtn">Add New Post</button>
+
+  <div id="postsContainer">
+    <!-- New posts will appear here -->
+  </div>
+
+  <script>
+    const postsContainer = document.getElementById("postsContainer");
+    const addPostBtn = document.getElementById("addPostBtn");
+
+    addPostBtn.addEventListener("click", () => {
+      // Create the post element
+      const post = document.createElement("div");
+      post.className = "post";
+
+      // Create title and description
+      post.innerHTML = `
+        <p>This is a new post added dynamically.</p>
+        <button class="deleteBtn">Delete</button>
+      `;
+
+      // Append to container
+      postsContainer.appendChild(post);
+
+      // Add event listener to delete button
+      const deleteBtn = post.querySelector(".deleteBtn");
+      deleteBtn.addEventListener("click", () => {
+        post.remove();
+      });
+    });
+  </script>
+
+</body>
+</html>
