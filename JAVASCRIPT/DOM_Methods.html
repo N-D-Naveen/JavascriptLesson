@@ -26,9 +26,12 @@
     </div>
 
     <input id="nameInput" type="text" value="John Doe" />
-    <button id="actionBtn">Click Me</button>
+    <button id="actionBtn" onmouseover="handleHover()">Click Me</button>
 
     <script>
+        function handleHover() {
+            console.log("hovered ......")
+        }
         // 1. Change text (innerText, textContent)
         const pageTitle = document.getElementById("page-title");
         pageTitle.innerText = "Updated Blog Title";
@@ -71,8 +74,8 @@
         console.log("Input value after:", input.value);
 
         // 9. Add/remove elements
-        const newPost = document.createElement("div");
-        newPost.className = "post";
+        const newPost = document.createElement("div"); //<div></div>
+        newPost.className = "post"; //<div class="post"></div>
         newPost.innerHTML = `
       <h2 class="post-title">Post 3 Title</h2>
       <p class="description">Post 3 Description</p>
