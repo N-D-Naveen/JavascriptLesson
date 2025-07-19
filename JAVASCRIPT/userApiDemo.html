@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Petstore User CRUD</title>
+</head>
+<body>
+
+<h2>Petstore User CRUD</h2>
+
+<!-- Input Fields -->
+<label>Username: <input type="text" id="username"></label><br>
+<label>First Name: <input type="text" id="firstName"></label><br>
+<label>Last Name: <input type="text" id="lastName"></label><br>
+<label>Email: <input type="email" id="email"></label><br>
+<label>Password: <input type="text" id="password"></label><br>
+<label>Phone: <input type="text" id="phone"></label><br><br>
+
+<!-- Buttons -->
+<button onclick="createUser()">Create User</button>
+<button onclick="getUser()">Get User</button>
+<button onclick="updateUser()">Update User</button>
+<button onclick="deleteUser()">Delete User</button>
+
+<!-- Output -->
+<pre id="output"></pre>
+
+<script>
+function getInputValues() {
+    return {
+        id: 0,
+        username: document.getElementById('username').value,
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        phone: document.getElementById('phone').value,
+        userStatus: 0
+    };
+}
+
+function displayOutput(data) {
+    document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+}
+
+// CREATE
+function createUser() {
+    const userData = getInputValues();
+    fetch('https://petstore.swagger.io/v2/user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'accept': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(res => res.json())
+    .then(data => displayOutput(data))
+    .catch(err => {
+        console.error(err);
+        alert('Create API failed');
+    });
+}
+
+// READ
+function getUser() {
+    const username = document.getElementById('username').value;
+    fetch(`https://petstore.swagger.io/v2/user/${username}`, {
+        method: 'GET',
+        headers: { 'accept': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(data => displayOutput(data))
+    .catch(err => {
+        console.error(err);
+        alert('Get API failed');
+    });
+}
+
+// UPDATE
+function updateUser() {
+    const userData = getInputValues();
+    fetch(`https://petstore.swagger.io/v2/user/${userData.username}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'accept': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(res => res.json())
+    .then(data => displayOutput(data))
+    .catch(err => {
+        console.error(err);
+        alert('Update API failed');
+    });
+}
+
+// DELETE
+function deleteUser() {
+    const username = document.getElementById('username').value;
+    fetch(`https://petstore.swagger.io/v2/user/${username}`, {
+        method: 'DELETE',
+        headers: { 'accept': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(data => displayOutput(data))
+    .catch(err => {
+        console.error(err);
+        alert('Delete API failed');
+    });
+}
+</script>
+
+</body>
+</html>
